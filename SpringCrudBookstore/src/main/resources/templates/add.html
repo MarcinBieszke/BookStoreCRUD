@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add Book!</title>
+<style type="text/css">
+		.add{
+			margin: auto;
+			width: 50%;
+		}
+		p{font-style: bold;}
+		</style>
+</head>
+	<body>
+	<div class="add">
+		<span th:if="${errorCustom != null}" th:text="${errorCustom.message}"></span>
+	<form method="post" th:object="${book}">
+		<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Incorrect date</p>
+	<label >Title:</label><input type="text" th:field="*{title}"/><br/>
+		<label >Author:</label><input  type="text" th:field="*{author}"/><br/>
+			<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Incorrect date</p>
+		<label >Price:</label><input type="text" th:field="*{price}"/><br/>
+		<input type="submit" value="Add Book!"/>
+	</form>
+	</div>
+	<a href="/logout">logout</a>
+	
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Book</title>
+		<style type="text/css">
+		.books{
+			margin: auto;
+			width: 50%;
+		}
+		label, p{font-style: bold;}
+		</style>
+	</head>
+	<body>
+	<div class="books" th:object="${book}">
+		<label>Title Book: </label><p th:text="*{title}"></p><br/>
+		<label>Author Book:</label> <p th:text="*{author}"></p><br/>
+		<label>Price Boook: </label><p th:text="*{price}"></p><br/>
+	</div>
+		<a href="/logout">logout</a>
+	</body>
+</html>
